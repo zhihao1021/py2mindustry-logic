@@ -1,0 +1,12 @@
+class LiquidCode:
+    water = "@water"
+    slag = "@slag"
+    oil = "@oil"
+    cryofluid = "@cryofluid"
+    neoplasm = "@neoplasm"
+    hydrogen = "@hydrogen"
+    ozone = "@ozone"
+    cyanogen = "@cyanogen"
+    gallium = "@gallium"
+    nitrogen = "@nitrogen"
+    arkycite = "@arkycite"
