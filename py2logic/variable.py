@@ -11,9 +11,14 @@ VariableType = Union[HasName, float, int, str]
 def variableType2Command(variable: Optional[VariableType] = None) -> str:
     if variable is None:
         return PropertieCode.null
-    return variable.name if issubclass(type(variable), HasName) else \
-        f"\"{variable}\"" if type(variable) == str else \
-        str(variable)
+
+    if issubclass(type(variable), HasName):
+        return variable.name
+
+    if isinstance(variable, str):
+        return f"\"{variable}\""
+
+    return str(variable)
 
 
 class VariableBase(HasName):

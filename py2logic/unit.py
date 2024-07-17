@@ -15,7 +15,7 @@ class Unit(HasPropertie):
     def __init__(
         self,
         radar: Optional[HasPropertie] = None,
-        target: list[str] = [],
+        target: Optional[list[str]] = None,
         sort: Optional[str] = None,
         max_or_nearest: bool = True,
     ) -> None:
@@ -23,7 +23,7 @@ class Unit(HasPropertie):
             self._name = PropertieCode.unit
         else:
             self._radar = radar
-            self._target = target
+            self._target = target or []
             self._sort = sort
             self._max_or_nearest = max_or_nearest
 
