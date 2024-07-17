@@ -12,9 +12,9 @@ class Building(HasPropertie):
     _index: Optional[int] = None
 
     def __init__(self, value: Union[str, int]) -> None:
-        if type(value) == str:
+        if isinstance(value, str):
             self._name = value
-        elif type(value) == int:
+        elif isinstance(value, int):
             self._index = value
 
     def _before_get_name(self) -> None:

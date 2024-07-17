@@ -40,15 +40,13 @@ def unbind_all():
     global has_unbind
 
     if not has_unbind:
-        has_unbind = True
-        bind_stack.pop()
-        result.append("ucontrol unbind")
+        unbind_unit()
 
     for unit in bind_stack:
-        result.append(
-            f"ubind {unit.name if type(unit) == Unit else unit}"
-        )
-        result.append("ucontrol unbind")
+        result.extend([
+            f"ubind {unit.name if type(unit) == Unit else unit}",
+            "ucontrol unbind"
+        ])
     bind_stack.clear()
 
 

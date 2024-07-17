@@ -5,11 +5,13 @@ from ..swap import result
 from ..variable import VariableType, variableType2Command
 
 def println(value: VariableType):
-    if type(value) == str:
+    if isinstance(value, str):
         result.append(f"print \"{value}\n\"")
     else:
-        result.append(f"print {variableType2Command(value)}")
-        result.append(f"print \"\n\"")
+        result.extend([
+            f"print {variableType2Command(value)}",
+            "print \"\n\""
+        ])
 
 def printlines(strings: list[str]):
     """
@@ -19,7 +21,7 @@ def printlines(strings: list[str]):
     result.append(f"print \"{string}\n\"")
 
 def print_flush(to: Union[str, Building]):
-    if type(to) == str:
+    if isinstance(to, str):
         result.append(f"printflush {to}")
     else:
         result.append(f"printflush {to.name}")

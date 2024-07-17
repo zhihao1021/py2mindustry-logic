@@ -7,10 +7,10 @@ from .utils import generateName
 
 
 class Unit(HasPropertie):
-    _radar: Optional[HasPropertie] = None,
-    _target: list[str] = [],
-    _sort: Optional[str] = None,
-    _max_or_nearest: bool = True,
+    _radar: Optional[HasPropertie] = None
+    _target: list[str] = []
+    _sort: Optional[str] = None
+    _max_or_nearest: bool = True
 
     def __init__(
         self,

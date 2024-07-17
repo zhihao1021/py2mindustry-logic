@@ -168,7 +168,7 @@ def for_loop_statment(
 def for_s(
     startValue: int = 0,
     stopValue: int = 0
-) -> tuple[Callable[[], None], Variable]:
+) -> __Complex:
     for_func, rof_func, variable = for_loop_statment(
         startValue=startValue,
         stopValue=stopValue
